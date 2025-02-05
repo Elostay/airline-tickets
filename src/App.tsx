@@ -1,9 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  BrowserRouter,
-} from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
@@ -23,12 +18,11 @@ function App() {
       <Provider store={store}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Router>
-            <Routes>
-              <Route path="/" element={<FlightsPage />} />
-              <Route path="/flights/:id" element={<FlightDetailsPage />} />
-            </Routes>
-          </Router>
+
+          <Routes>
+            <Route path="/" element={<FlightsPage />} />
+            <Route path="/flights/:id" element={<FlightDetailsPage />} />
+          </Routes>
         </ThemeProvider>
       </Provider>
     </BrowserRouter>
